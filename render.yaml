@@ -45,3 +45,8 @@ services:
 
       - key: WEBHOOK_URL
         value: https://n8n-minisaas.onrender.com/
+
+databases:
+  - name: n8nDB
+    region: frankfurt # optional (defaults to oregon)
+    plan: free
