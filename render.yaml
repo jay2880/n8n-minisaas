@@ -1,13 +1,13 @@
 services:
   - type: web
-    name: n8n
+    name: n8n-minisaas
     env: docker
     region: frankfurt # optional (defaults to oregon)
     plan: free # optional (defaults to starter)
     branch: main # optional (defaults to master)
     numInstances: 1
     healthCheckPath: /healthz
-   envVars:
+    envVars:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
