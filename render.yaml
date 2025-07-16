@@ -1,13 +1,12 @@
 services:
-  - type: web
-    name: n8n-minisaas
+   - type: web
+    name: n8n
     env: docker
-    plan: free
+    region: frankfurt # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
     branch: main # optional (defaults to master)
     numInstances: 1
-    healthCheckPath: /healthz
-    autoDeploy: true
-    envVars:
+   envVars:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
@@ -42,7 +41,8 @@ services:
         value: fr
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: true
       - key: WEBHOOK_URL
         value: https://n8n-minisaas.onrender.com/
 
